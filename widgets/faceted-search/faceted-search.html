@@ -1,0 +1,25 @@
+<!--
+  Markup only. Facets and results are built by faceted-search.js from the JSON
+  index named on the widget URL.
+
+  The search input is inside a form with role="search" so assistive technology can
+  jump straight to it, and so pressing Enter does something predictable.
+-->
+<form class="faceted-search-bar" role="search">
+  <div class="faceted-search-field">
+    <label for="fs-q">Search</label>
+    <input id="fs-q" type="search" name="q" autocomplete="off" placeholder="Search…" />
+  </div>
+  <div class="faceted-search-facets"></div>
+  <button class="faceted-search-reset" type="reset" hidden>Clear all</button>
+</form>
+
+<!--
+  The count is a live region so a filter change is announced. It is polite rather
+  than assertive: results updating is worth knowing, not worth interrupting.
+-->
+<p class="faceted-search-count" role="status"></p>
+
+<ul class="faceted-search-results"></ul>
+
+<p class="faceted-search-empty" hidden></p>

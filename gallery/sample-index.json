@@ -1,0 +1,71 @@
+{
+  "comment": "Sample data for the faceted-search demo. Shaped like an Edge Delivery Services query index or spreadsheet export, which is { data: [...] } with flat string fields.",
+  "total": 9,
+  "offset": 0,
+  "limit": 9,
+  "data": [
+    {
+      "path": "/docs/blocks",
+      "title": "Anatomy of a block",
+      "description": "How a block receives authored content, and why decorating defensively matters when authors add and omit cells.",
+      "category": "Docs",
+      "level": "Beginner"
+    },
+    {
+      "path": "/docs/widgets",
+      "title": "Widgets versus blocks",
+      "description": "Blocks give form to authored content. Widgets are application parts an author references with a link.",
+      "category": "Docs",
+      "level": "Beginner"
+    },
+    {
+      "path": "/docs/performance",
+      "title": "Keeping it 100",
+      "description": "Why the performance budget is a design constraint rather than a report you read after launch.",
+      "category": "Docs",
+      "level": "Intermediate"
+    },
+    {
+      "path": "/guides/forms",
+      "title": "Accessible forms",
+      "description": "Error summaries, focus management, and why unstyleable browser validation bubbles are usually the wrong default.",
+      "category": "Guides",
+      "level": "Intermediate"
+    },
+    {
+      "path": "/guides/i18n",
+      "title": "Formatting for other locales",
+      "description": "Delegating numbers, currencies and dates to Intl instead of shipping a table of separators.",
+      "category": "Guides",
+      "level": "Intermediate"
+    },
+    {
+      "path": "/guides/urls-as-state",
+      "title": "URLs as state",
+      "description": "Keeping filters in the query string so a filtered view can be linked, shared and restored.",
+      "category": "Guides",
+      "level": "Advanced"
+    },
+    {
+      "path": "/patterns/progressive-enhancement",
+      "title": "Progressive enhancement",
+      "description": "Declaring behaviour in markup first, so a failed script degrades instead of erasing the page.",
+      "category": "Patterns",
+      "level": "Advanced"
+    },
+    {
+      "path": "/patterns/live-regions",
+      "title": "Live regions, politely",
+      "description": "When to use polite over assertive, and why a slider should not interrupt on every value.",
+      "category": "Patterns",
+      "level": "Advanced"
+    },
+    {
+      "path": "/patterns/café-culture",
+      "title": "Café culture",
+      "description": "A row with an accent in the title, so the search can prove it matches without one.",
+      "category": "Patterns",
+      "level": "Beginner"
+    }
+  ]
+}

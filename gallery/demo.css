@@ -1,0 +1,87 @@
+/*
+ * Demo host chrome only. Nothing here styles a widget — a widget that needed the
+ * host page's CSS to look right would be broken in the projects that consume it.
+ */
+
+:root {
+  --demo-ink: #1c1c1c;
+  --demo-muted: #5c5c5c;
+  --demo-border: #d8d8d8;
+  --link-color: #3b63fb;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", roboto, sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: var(--demo-ink);
+}
+
+.demo {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.demo-eyebrow {
+  margin: 0;
+  color: var(--demo-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.demo-title {
+  margin: 0.5rem 0 0;
+  font-family: ui-monospace, sfmono-regular, menlo, monospace;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.demo-lede {
+  margin: 0.5rem 0 0;
+  max-width: 42rem;
+  color: var(--demo-muted);
+}
+
+.demo-rule {
+  margin: 1.75rem 0;
+  border: 0;
+  border-top: 1px solid var(--demo-border);
+}
+
+.demo-error {
+  padding: 1rem;
+  border: 2px solid #b3261e;
+  border-radius: 4px;
+  color: #b3261e;
+  font-weight: 600;
+}
+
+.demo-back {
+  margin: 3rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--demo-border);
+}
+
+.demo-back a {
+  color: var(--link-color);
+}
+
+/*
+ * Embedded in a gallery card. The card already supplies the title, description
+ * and links, so this page's chrome is redundant there and only steals vertical
+ * space from the widget it is meant to be showing.
+ */
+.demo-embed .demo {
+  padding: 1.25rem;
+}
+
+.demo-embed .demo-eyebrow,
+.demo-embed .demo-title,
+.demo-embed .demo-lede,
+.demo-embed .demo-rule,
+.demo-embed .demo-back {
+  display: none;
+}

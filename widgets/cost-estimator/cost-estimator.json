@@ -1,0 +1,10 @@
+{
+  "currency": "USD",
+  "base": 6000,
+  "perPage": 120,
+  "perLocale": 2400,
+  "perBlock": 900,
+  "migration": 8000,
+  "training": 3500,
+  "note": "An order-of-magnitude estimate for illustration, not a quote."
+}

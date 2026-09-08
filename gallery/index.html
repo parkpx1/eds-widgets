@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Widgets for AEM Edge Delivery Services</title>
+    <meta
+      name="description"
+      content="A library of self-contained widgets for AEM Edge Delivery Services. Each one runs live on this page, documents its parameters, and can be downloaded as source."
+    />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/gallery/gallery.css" />
+  </head>
+  <body>
+    <header class="site">
+      <p class="site-eyebrow">AEM Edge Delivery Services</p>
+      <h1 class="site-title">Widgets</h1>
+      <p class="site-lede">
+        Blocks give form to content an author writes. <strong>Widgets</strong> are the
+        application parts of a site — forms, search, calculators — that an author adds
+        by pasting a single link, with no content to author at all.
+      </p>
+      <p class="site-lede">
+        Each widget below is running for real on this page, not pictured. Every one
+        documents its parameters and can be downloaded as source.
+      </p>
+
+      <!--
+        Consuming a widget is one line, so it belongs above the cards rather than
+        buried in a README nobody opens.
+      -->
+      <div class="site-usage">
+        <p class="site-usage-title">To use one, put a link on its own line in a document:</p>
+        <pre class="site-code"><code>https://main--eds-widgets--parkpx1.aem.page/widgets/cost-estimator/cost-estimator.html</code></pre>
+        <p class="site-usage-note">
+          Parameters go on the query string and arrive as <code>data-</code> attributes.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <ul class="cards" id="cards">
+        <li class="cards-loading">Loading widgets…</li>
+      </ul>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Built on the
+        <a href="https://github.com/adobe/aem-boilerplate">aem-boilerplate</a>. Widget
+        documentation lives at
+        <a href="https://www.aem.live/docs/widgets">aem.live/docs/widgets</a>.
+      </p>
+    </footer>
+
+    <script type="module" src="/gallery/gallery.js"></script>
+  </body>
+</html>

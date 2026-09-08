@@ -1,0 +1,48 @@
+<!--
+  Markup only. cost-estimator.js reads the inputs and writes the figures.
+
+  Each control is a real `<input type="range">` with a paired `<output>`. Range
+  inputs are keyboard operable and announced with their value for free; a div with
+  a drag handler is neither.
+-->
+<form class="cost-estimator-form">
+  <div class="cost-estimator-control">
+    <label for="ce-pages">Pages</label>
+    <input id="ce-pages" name="pages" type="range" min="1" max="500" step="1" value="40" />
+    <output class="cost-estimator-value" for="ce-pages"></output>
+  </div>
+
+  <div class="cost-estimator-control">
+    <label for="ce-locales">Locales</label>
+    <input id="ce-locales" name="locales" type="range" min="1" max="20" step="1" value="3" />
+    <output class="cost-estimator-value" for="ce-locales"></output>
+  </div>
+
+  <div class="cost-estimator-control">
+    <label for="ce-blocks">Custom blocks</label>
+    <input id="ce-blocks" name="blocks" type="range" min="0" max="40" step="1" value="8" />
+    <output class="cost-estimator-value" for="ce-blocks"></output>
+  </div>
+
+  <fieldset class="cost-estimator-options">
+    <legend>Also include</legend>
+    <label>
+      <input name="migration" type="checkbox" />
+      <span>Content migration</span>
+    </label>
+    <label>
+      <input name="training" type="checkbox" />
+      <span>Author training</span>
+    </label>
+  </fieldset>
+</form>
+
+<!--
+  The total is a polite live region, so dragging a slider does not fire an
+  announcement on every intermediate value while still reporting the result.
+-->
+<div class="cost-estimator-result">
+  <p class="cost-estimator-total" role="status"></p>
+  <dl class="cost-estimator-breakdown"></dl>
+  <p class="cost-estimator-note"></p>
+</div>

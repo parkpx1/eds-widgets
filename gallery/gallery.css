@@ -1,0 +1,264 @@
+/*
+ * Gallery chrome. Nothing here styles a widget — each preview is in its own frame
+ * loading the widget's own CSS, which is the only way to be sure the gallery is
+ * not quietly propping a widget up.
+ */
+
+:root {
+  --ink: #17201b;
+  --muted: #5c6660;
+  --border: #d9ded9;
+  --surface: #f7f8f7;
+  --accent: #1b4332;
+  --link-color: #1b4332;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", roboto, sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: var(--ink);
+}
+
+a {
+  color: var(--link-color);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.site {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 1rem;
+}
+
+.site-eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.site-title {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2.25rem, 7vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.site-lede {
+  margin: 1rem 0 0;
+  font-size: 1.0625rem;
+}
+
+.site-usage {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+}
+
+.site-usage-title {
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+}
+
+.site-usage-note {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/*
+ * These snippets wrap rather than scroll sideways. A horizontally scrolling <pre>
+ * is a scrollable region with no keyboard access unless it is given a tab stop,
+ * and for a URL somebody is meant to copy, seeing all of it beats scrolling to
+ * the end of it. `anywhere` is needed because a URL has no spaces to break on.
+ */
+.site-code,
+.card-code {
+  margin: 0;
+  padding: 0.75rem 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+  font-family: ui-monospace, sfmono-regular, menlo, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+code {
+  font-family: ui-monospace, sfmono-regular, menlo, monospace;
+}
+
+.cards {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 60rem;
+  margin: 2.5rem auto 0;
+  padding: 0 1.5rem;
+  list-style: none;
+}
+
+.cards-loading,
+.cards-error {
+  color: var(--muted);
+}
+
+.card {
+  padding: 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.card-name {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-family: ui-monospace, sfmono-regular, menlo, monospace;
+  font-size: 0.8125rem;
+}
+
+.card-summary {
+  margin: 0.75rem 0 0;
+  max-width: 44rem;
+}
+
+/*
+ * The preview is resizable so a visitor can drag a widget narrow and watch it
+ * respond, which is more convincing than a note claiming that it does.
+ *
+ * `overflow: hidden` rather than `auto`: CSS `resize` only needs overflow to be
+ * something other than `visible`, and `auto` made this a scrollable region with
+ * no way to reach it from the keyboard. The iframe is width:100% so there is
+ * nothing to scroll here anyway — its content scrolls inside the frame.
+ */
+.card-preview {
+  margin-top: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  resize: horizontal;
+  overflow: hidden;
+  min-width: 18rem;
+}
+
+.card-preview iframe {
+  display: block;
+  width: 100%;
+  height: 34rem;
+  border: 0;
+  background: #fff;
+}
+
+.card-why {
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+.card-why h3 {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.card-why p {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+}
+
+.card-params {
+  width: 100%;
+  margin-top: 1.75rem;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.card-params caption {
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.card-params th,
+.card-params td {
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.card-params tbody th {
+  font-family: ui-monospace, sfmono-regular, menlo, monospace;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.card-code {
+  margin-top: 1.5rem;
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 0.5rem 1.125rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--accent);
+}
+
+.card-button-solid {
+  background: var(--accent);
+  color: #fff;
+}
+
+.card-button[disabled] {
+  cursor: progress;
+  opacity: 0.6;
+}
+
+.site-footer {
+  max-width: 60rem;
+  margin: 4rem auto 0;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.875rem;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Widget demo</title>
+    <!--
+      Not indexable. These pages are one widget standing alone with no surrounding
+      content, so they would only compete with the gallery page that explains them.
+    -->
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/gallery/demo.css" />
+  </head>
+  <body>
+    <main class="demo">
+      <p class="demo-eyebrow">Widget demo</p>
+      <h1 class="demo-title" id="demo-title">Loading…</h1>
+      <p class="demo-lede">
+        One widget, running on its own. Everything below this line is the widget.
+      </p>
+      <hr class="demo-rule" />
+
+      <!-- The widget block element. demo.js decorates this exactly as the
+           pipeline would decorate an authored widget link. -->
+      <div id="widget"></div>
+
+      <p class="demo-back"><a href="/gallery/">← All widgets</a></p>
+    </main>
+    <script type="module" src="/gallery/demo.js"></script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+{
+  "comment": "Single source of truth for the gallery. Cards, demos and downloads are all built from this, so adding a widget means adding one entry here and nothing else.",
+  "widgets": [
+    {
+      "name": "stepped-form",
+      "title": "Stepped form",
+      "summary": "A multi-step form that keeps native validation, announces what went wrong, and moves focus where a keyboard user expects it.",
+      "why": "Forms are where accessibility work is most often skipped and most easily noticed. This one declares its rules in HTML, reads them back through the Constraint Validation API, and builds an error summary that links to each field.",
+      "files": [
+        "stepped-form.html",
+        "stepped-form.css",
+        "stepped-form.js"
+      ],
+      "params": [
+        {
+          "name": "action",
+          "required": false,
+          "description": "Where to POST on submit. Omit to resolve locally."
+        },
+        {
+          "name": "endLabel",
+          "required": false,
+          "description": "Message shown after a successful submit."
+        }
+      ],
+      "demo": "",
+      "height": "30rem"
+    },
+    {
+      "name": "faceted-search",
+      "title": "Faceted search",
+      "summary": "Search and checkbox facets over a JSON index, with the filter state kept in the URL so a filtered view can be linked and shared.",
+      "why": "Facet values are derived from the data rather than configured, so they cannot go stale when a row is added. Filter state lives in the query string because a list you cannot link to is a dead end.",
+      "files": [
+        "faceted-search.html",
+        "faceted-search.css",
+        "faceted-search.js"
+      ],
+      "params": [
+        {
+          "name": "src",
+          "required": true,
+          "description": "URL of the JSON index. Accepts { data: [...] } or a bare array."
+        },
+        {
+          "name": "facets",
+          "required": false,
+          "description": "Comma-separated field names to build facets from."
+        },
+        {
+          "name": "fields",
+          "required": false,
+          "description": "Comma-separated fields to search. Defaults to title,description."
+        },
+        {
+          "name": "limit",
+          "required": false,
+          "description": "Maximum rows rendered. Defaults to 60."
+        }
+      ],
+      "demo": "src=/gallery/sample-index.json&facets=category,level",
+      "height": "44rem"
+    },
+    {
+      "name": "cost-estimator",
+      "title": "Cost estimator",
+      "summary": "Range inputs driving a live figure, formatted for the page's own language and currency through Intl.NumberFormat.",
+      "why": "Rates live in a JSON file rather than in the script, so changing a number is a content edit. Formatting is delegated to Intl, so the widget prints correctly in locales it was never explicitly taught.",
+      "files": [
+        "cost-estimator.html",
+        "cost-estimator.css",
+        "cost-estimator.js",
+        "cost-estimator.json"
+      ],
+      "params": [
+        {
+          "name": "currency",
+          "required": false,
+          "description": "ISO 4217 code. Defaults to the value in the JSON."
+        },
+        {
+          "name": "locale",
+          "required": false,
+          "description": "BCP 47 tag for formatting. Defaults to the document language."
+        },
+        {
+          "name": "rates",
+          "required": false,
+          "description": "URL of an alternative rates file."
+        }
+      ],
+      "demo": "",
+      "height": "26rem"
+    }
+  ]
+}

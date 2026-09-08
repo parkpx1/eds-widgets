@@ -1,0 +1,78 @@
+<!--
+  Markup only. Behaviour lives in stepped-form.js, styling in stepped-form.css.
+
+  Every step is present in the DOM from the start and hidden with the `hidden`
+  attribute rather than being built on demand. Native validation can then run
+  across the whole form, and a browser restoring a session or autofilling has
+  real fields to fill.
+-->
+<form class="stepped-form-form" novalidate>
+  <p class="stepped-form-progress" role="status"></p>
+
+  <!--
+    The error summary is the first thing a screen reader user meets after a
+    failed submit, and each entry moves focus to the field it names. tabindex="-1"
+    makes the region focusable programmatically without adding a tab stop.
+  -->
+  <div class="stepped-form-summary" role="alert" tabindex="-1" hidden>
+    <p class="stepped-form-summary-title"></p>
+    <ul class="stepped-form-summary-list"></ul>
+  </div>
+
+  <fieldset class="stepped-form-step" data-step="Your details">
+    <legend>Your details</legend>
+
+    <div class="stepped-form-field">
+      <label for="sf-name">Full name</label>
+      <input id="sf-name" name="name" type="text" autocomplete="name" required />
+      <p class="stepped-form-error" id="sf-name-error" hidden></p>
+    </div>
+
+    <div class="stepped-form-field">
+      <label for="sf-email">Email</label>
+      <input id="sf-email" name="email" type="email" autocomplete="email" required />
+      <p class="stepped-form-error" id="sf-email-error" hidden></p>
+    </div>
+  </fieldset>
+
+  <fieldset class="stepped-form-step" data-step="Your project" hidden>
+    <legend>Your project</legend>
+
+    <div class="stepped-form-field">
+      <label for="sf-kind">What do you need?</label>
+      <select id="sf-kind" name="kind" required>
+        <option value="">Choose one</option>
+        <option value="new-site">A new site</option>
+        <option value="migration">A migration</option>
+        <option value="audit">A performance audit</option>
+      </select>
+      <p class="stepped-form-error" id="sf-kind-error" hidden></p>
+    </div>
+
+    <div class="stepped-form-field">
+      <label for="sf-detail">Anything we should know?</label>
+      <textarea id="sf-detail" name="detail" rows="4"></textarea>
+      <p class="stepped-form-hint">Optional.</p>
+    </div>
+  </fieldset>
+
+  <fieldset class="stepped-form-step" data-step="Review" hidden>
+    <legend>Review</legend>
+    <dl class="stepped-form-review"></dl>
+    <div class="stepped-form-field">
+      <label class="stepped-form-check">
+        <input id="sf-confirm" name="confirm" type="checkbox" required />
+        <span>These details are correct.</span>
+      </label>
+      <p class="stepped-form-error" id="sf-confirm-error" hidden></p>
+    </div>
+  </fieldset>
+
+  <div class="stepped-form-actions">
+    <button class="stepped-form-back" type="button" hidden>Back</button>
+    <button class="stepped-form-next" type="button">Next</button>
+    <button class="stepped-form-submit" type="submit" hidden>Send</button>
+  </div>
+
+  <p class="stepped-form-done" role="status" hidden></p>
+</form>
